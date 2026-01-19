@@ -1,0 +1,580 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "title": "Produto & Negócio",
+            "description": "Qual é meu nível de compreensão do problema de produto, das regras de negócio e do impacto das soluções no contexto do ciclo de faturamento hospitalar?",
+            "levels": [
+                {
+                    "level": 1,
+                    "title": "Inicial",
+                    "description": "Compreendo as regras e o contexto conforme explicados pelo time, focando na demanda imediata."
+                },
+                {
+                    "level": 2,
+                    "title": "Básico",
+                    "description": "Entendo as principais regras de negócio e consigo aplicá-las corretamente nas soluções propostas."
+                },
+                {
+                    "level": 3,
+                    "title": "Pleno",
+                    "description": "Compreendo bem o fluxo de faturamento hospitalar e considero impactos operacionais nas decisões de design."
+                },
+                {
+                    "level": 4,
+                    "title": "Sênior",
+                    "description": "Antecipando impactos de negócio, questiono soluções que possam gerar riscos operacionais ou financeiros."
+                },
+                {
+                    "level": 5,
+                    "title": "Especialista",
+                    "description": "Sou referência no entendimento do negócio e influencio decisões estratégicas de produto com base nesse conhecimento."
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Produto & Negócio",
+            "description": "Como conecto minhas decisões de design aos objetivos do produto, métricas e resultados esperados pelo negócio?",
+            "levels": [
+                {
+                    "level": 1,
+                    "title": "Inicial",
+                    "description": "Considero objetivos de produto de forma geral, sem utilizá-los diretamente nas decisões."
+                },
+                {
+                    "level": 2,
+                    "title": "Básico",
+                    "description": "Alinho decisões de design a objetivos já definidos pelo time."
+                },
+                {
+                    "level": 3,
+                    "title": "Pleno",
+                    "description": "Relaciono decisões de design a métricas e consigo explicar seu impacto esperado."
+                },
+                {
+                    "level": 4,
+                    "title": "Sênior",
+                    "description": "Utilizo métricas para defender decisões e avaliar trade-offs."
+                },
+                {
+                    "level": 5,
+                    "title": "Especialista",
+                    "description": "Influencio prioridades do produto conectando design, métricas e estratégia de negócio."
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Discovery & Pesquisa",
+            "description": "Como conduzo a etapa de discovery, incluindo levantamento de contexto, benchmark de concorrentes e análise de soluções existentes?",
+            "levels": [
+                {
+                    "level": 1,
+                    "title": "Inicial",
+                    "description": "Participo do discovery a partir de insumos já levantados por outras pessoas."
+                },
+                {
+                    "level": 2,
+                    "title": "Básico",
+                    "description": "Contribuo com pesquisas pontuais e benchmarks simples."
+                },
+                {
+                    "level": 3,
+                    "title": "Pleno",
+                    "description": "Conduzo discovery de forma estruturada, levantando contexto, referências e oportunidades."
+                },
+                {
+                    "level": 4,
+                    "title": "Sênior",
+                    "description": "Sintetizo descobertas em insights claros que direcionam decisões do time."
+                },
+                {
+                    "level": 5,
+                    "title": "Especialista",
+                    "description": "Estruturo processos de discovery que influenciam estratégia e roadmap."
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Pesquisa & Dados",
+            "description": "Como utilizo técnicas e ferramentas (entrevistas, dados internos, analytics, desk research) para levantar informações relevantes?",
+            "levels": [
+                {
+                    "level": 1,
+                    "title": "Inicial",
+                    "description": "Utilizo informações disponíveis sem escolher métodos de forma consciente."
+                },
+                {
+                    "level": 2,
+                    "title": "Básico",
+                    "description": "Aplico técnicas conhecidas quando orientado ou solicitado."
+                },
+                {
+                    "level": 3,
+                    "title": "Pleno",
+                    "description": "Seleciono técnicas adequadas ao problema e executo pesquisas de forma consistente."
+                },
+                {
+                    "level": 4,
+                    "title": "Sênior",
+                    "description": "Combino dados qualitativos e quantitativos para reduzir incertezas."
+                },
+                {
+                    "level": 5,
+                    "title": "Especialista",
+                    "description": "Defino abordagens de pesquisa que se tornam referência para o time."
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Ideação",
+            "description": "Como atuo na fase de ideação, explorando alternativas e considerando restrições técnicas e de negócio?",
+            "levels": [
+                {
+                    "level": 1,
+                    "title": "Inicial",
+                    "description": "Proponho soluções iniciais com base em referências conhecidas."
+                },
+                {
+                    "level": 2,
+                    "title": "Básico",
+                    "description": "Exploro algumas alternativas antes de definir a solução."
+                },
+                {
+                    "level": 3,
+                    "title": "Pleno",
+                    "description": "Exploro diferentes abordagens, avaliando impacto e viabilidade."
+                },
+                {
+                    "level": 4,
+                    "title": "Sênior",
+                    "description": "Facilito ideação colaborativa e discuto trade-offs com o time."
+                },
+                {
+                    "level": 5,
+                    "title": "Especialista",
+                    "description": "Conduzo ideações estratégicas que ampliam possibilidades do produto."
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Hipóteses & Validação",
+            "description": "Como transformo problemas em hipóteses e utilizo validações para reduzir riscos?",
+            "levels": [
+                {
+                    "level": 1,
+                    "title": "Inicial",
+                    "description": "Valido soluções de forma pontual, sem estruturar hipóteses."
+                },
+                {
+                    "level": 2,
+                    "title": "Básico",
+                    "description": "Formulo hipóteses simples e realizo validações básicas."
+                },
+                {
+                    "level": 3,
+                    "title": "Pleno",
+                    "description": "Utilizo hipóteses para orientar decisões e testes."
+                },
+                {
+                    "level": 4,
+                    "title": "Sênior",
+                    "description": "Crio ciclos contínuos de validação e aprendizado."
+                },
+                {
+                    "level": 5,
+                    "title": "Especialista",
+                    "description": "Influencio o time a operar com mentalidade experimental."
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "title": "Prototipação",
+            "description": "Como utilizo ferramentas de prototipação para explorar, comunicar e validar soluções?",
+            "levels": [
+                {
+                    "level": 1,
+                    "title": "Inicial",
+                    "description": "Crio protótipos simples para representar soluções."
+                },
+                {
+                    "level": 2,
+                    "title": "Básico",
+                    "description": "Utilizo protótipos para comunicação básica com o time."
+                },
+                {
+                    "level": 3,
+                    "title": "Pleno",
+                    "description": "Uso protótipos com fidelidade adequada para validação e alinhamento."
+                },
+                {
+                    "level": 4,
+                    "title": "Sênior",
+                    "description": "Exploro protótipos como ferramenta de decisão e experimentação."
+                },
+                {
+                    "level": 5,
+                    "title": "Especialista",
+                    "description": "Elevo o uso de prototipação como prática estratégica no time."
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "title": "UI & Craft",
+            "description": "Qual é o nível de qualidade visual, consistência e atenção a detalhes nas minhas entregas?",
+            "levels": [
+                {
+                    "level": 1,
+                    "title": "Inicial",
+                    "description": "Entrego interfaces funcionais, ainda com inconsistências pontuais."
+                },
+                {
+                    "level": 2,
+                    "title": "Básico",
+                    "description": "Aplico padrões visuais conhecidos na maioria dos casos."
+                },
+                {
+                    "level": 3,
+                    "title": "Pleno",
+                    "description": "Entrego interfaces consistentes e alinhadas ao design system."
+                },
+                {
+                    "level": 4,
+                    "title": "Sênior",
+                    "description": "Entrego soluções refinadas e coerentes em diferentes cenários."
+                },
+                {
+                    "level": 5,
+                    "title": "Especialista",
+                    "description": "Sou referência de qualidade visual e elevo o padrão do produto."
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "title": "Design System",
+            "description": "Como utilizo e contribuo para o design system?",
+            "levels": [
+                {
+                    "level": 1,
+                    "title": "Inicial",
+                    "description": "Utilizo componentes existentes sem aprofundar entendimento."
+                },
+                {
+                    "level": 2,
+                    "title": "Básico",
+                    "description": "Aplico corretamente o design system."
+                },
+                {
+                    "level": 3,
+                    "title": "Pleno",
+                    "description": "Utilizo o sistema de forma consistente e consciente."
+                },
+                {
+                    "level": 4,
+                    "title": "Sênior",
+                    "description": "Proponho melhorias e identifico gaps no sistema."
+                },
+                {
+                    "level": 5,
+                    "title": "Especialista",
+                    "description": "Evoluo o design system de forma estratégica e escalável."
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "title": "Testes de Usabilidade",
+            "description": "Como planejo, conduzo e analiso testes de usabilidade?",
+            "levels": [
+                {
+                    "level": 1,
+                    "title": "Inicial",
+                    "description": "Participo de testes conduzidos por outras pessoas."
+                },
+                {
+                    "level": 2,
+                    "title": "Básico",
+                    "description": "Conduzo testes simples com roteiros básicos."
+                },
+                {
+                    "level": 3,
+                    "title": "Pleno",
+                    "description": "Planejo roteiros, conduzo testes e sintetizo aprendizados."
+                },
+                {
+                    "level": 4,
+                    "title": "Sênior",
+                    "description": "Uso testes para orientar decisões estratégicas de design."
+                },
+                {
+                    "level": 5,
+                    "title": "Especialista",
+                    "description": "Estruturo práticas de teste recorrentes no time."
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "title": "Handoff",
+            "description": "Como realizo o handoff para desenvolvimento garantindo clareza e viabilidade técnica?",
+            "levels": [
+                {
+                    "level": 1,
+                    "title": "Inicial",
+                    "description": "Entrego telas e explicações básicas."
+                },
+                {
+                    "level": 2,
+                    "title": "Básico",
+                    "description": "Especifico fluxos e estados principais."
+                },
+                {
+                    "level": 3,
+                    "title": "Pleno",
+                    "description": "Faço handoff claro, reduzindo dúvidas durante o desenvolvimento."
+                },
+                {
+                    "level": 4,
+                    "title": "Sênior",
+                    "description": "Antecipando problemas técnicos e ajustando soluções."
+                },
+                {
+                    "level": 5,
+                    "title": "Especialista",
+                    "description": "Elevo a qualidade do handoff como prática do time."
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "title": "Comunicação",
+            "description": "Como me comunico e pratico escuta ativa com time interno e stakeholders externos?",
+            "levels": [
+                {
+                    "level": 1,
+                    "title": "Inicial",
+                    "description": "Comunico decisões quando solicitado."
+                },
+                {
+                    "level": 2,
+                    "title": "Básico",
+                    "description": "Explico racional básico das decisões."
+                },
+                {
+                    "level": 3,
+                    "title": "Pleno",
+                    "description": "Comunico de forma clara e escuto ativamente diferentes perspectivas."
+                },
+                {
+                    "level": 4,
+                    "title": "Sênior",
+                    "description": "Adapto comunicação conforme público e contexto."
+                },
+                {
+                    "level": 5,
+                    "title": "Especialista",
+                    "description": "Influencio decisões por meio de comunicação eficaz."
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "title": "Colaboração",
+            "description": "Como colaboro com PMs e desenvolvedores ao longo do ciclo do produto?",
+            "levels": [
+                {
+                    "level": 1,
+                    "title": "Inicial",
+                    "description": "Colaboro em momentos pontuais."
+                },
+                {
+                    "level": 2,
+                    "title": "Básico",
+                    "description": "Trabalho integrado quando acionado."
+                },
+                {
+                    "level": 3,
+                    "title": "Pleno",
+                    "description": "Colaboro continuamente ao longo do ciclo."
+                },
+                {
+                    "level": 4,
+                    "title": "Sênior",
+                    "description": "Antecipando problemas e facilitando decisões."
+                },
+                {
+                    "level": 5,
+                    "title": "Especialista",
+                    "description": "Atuo como elo estratégico entre áreas."
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "title": "Conhecimento Técnico",
+            "description": "Qual é meu nível de entendimento sobre as tecnologias utilizadas pela equipe e seu impacto no design?",
+            "levels": [
+                {
+                    "level": 1,
+                    "title": "Inicial",
+                    "description": "Tenho noções gerais sobre a stack utilizada."
+                },
+                {
+                    "level": 2,
+                    "title": "Básico",
+                    "description": "Entendo limitações técnicas mais comuns."
+                },
+                {
+                    "level": 3,
+                    "title": "Pleno",
+                    "description": "Considero aspectos técnicos ao tomar decisões de design."
+                },
+                {
+                    "level": 4,
+                    "title": "Sênior",
+                    "description": "Discuto soluções técnicas com desenvolvedores."
+                },
+                {
+                    "level": 5,
+                    "title": "Especialista",
+                    "description": "Influencio decisões técnicas por meio do design."
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "title": "Autonomia",
+            "description": "Como assumo autonomia e responsabilidade pelo meu trabalho?",
+            "levels": [
+                {
+                    "level": 1,
+                    "title": "Inicial",
+                    "description": "Executo tarefas com acompanhamento próximo."
+                },
+                {
+                    "level": 2,
+                    "title": "Básico",
+                    "description": "Trabalho de forma independente dentro de escopos claros."
+                },
+                {
+                    "level": 3,
+                    "title": "Pleno",
+                    "description": "Assumo responsabilidade do problema à entrega."
+                },
+                {
+                    "level": 4,
+                    "title": "Sênior",
+                    "description": "Atuo com forte senso de ownership sobre resultados."
+                },
+                {
+                    "level": 5,
+                    "title": "Especialista",
+                    "description": "Atuo como co-responsável pelo sucesso do produto."
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "title": "Proatividade",
+            "description": "Como demonstro proatividade na identificação de problemas e oportunidades?",
+            "levels": [
+                {
+                    "level": 1,
+                    "title": "Inicial",
+                    "description": "Reajo às demandas conforme surgem."
+                },
+                {
+                    "level": 2,
+                    "title": "Básico",
+                    "description": "Aponto problemas quando identifico."
+                },
+                {
+                    "level": 3,
+                    "title": "Pleno",
+                    "description": "Proponho melhorias de forma recorrente."
+                },
+                {
+                    "level": 4,
+                    "title": "Sênior",
+                    "description": "Antecipando riscos e oportunidades."
+                },
+                {
+                    "level": 5,
+                    "title": "Especialista",
+                    "description": "Impulsiono mudanças relevantes no produto."
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "title": "Aprendizado",
+            "description": "Como invisto no meu desenvolvimento profissional?",
+            "levels": [
+                {
+                    "level": 1,
+                    "title": "Inicial",
+                    "description": "Aprendo principalmente a partir das demandas atuais."
+                },
+                {
+                    "level": 2,
+                    "title": "Básico",
+                    "description": "Busco aprendizado pontual para problemas específicos."
+                },
+                {
+                    "level": 3,
+                    "title": "Pleno",
+                    "description": "Invisto continuamente no meu desenvolvimento."
+                },
+                {
+                    "level": 4,
+                    "title": "Sênior",
+                    "description": "Aplico aprendizados e compartilho com o time."
+                },
+                {
+                    "level": 5,
+                    "title": "Especialista",
+                    "description": "Desenvolvo outras pessoas e elevo o nível do time."
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "title": "Impacto",
+            "description": "Qual é o impacto do meu trabalho além das entregas individuais?",
+            "levels": [
+                {
+                    "level": 1,
+                    "title": "Inicial",
+                    "description": "Meu impacto está concentrado nas entregas sob minha responsabilidade."
+                },
+                {
+                    "level": 2,
+                    "title": "Básico",
+                    "description": "Meu trabalho contribui para o time imediato."
+                },
+                {
+                    "level": 3,
+                    "title": "Pleno",
+                    "description": "Meu impacto é percebido no produto como um todo."
+                },
+                {
+                    "level": 4,
+                    "title": "Sênior",
+                    "description": "Influencio práticas e decisões do time."
+                },
+                {
+                    "level": 5,
+                    "title": "Especialista",
+                    "description": "Meu impacto é sistêmico e duradouro na organização."
+                }
+            ]
+        }
+    ]
+}

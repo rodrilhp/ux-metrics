@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados - Avaliação de Competências</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f5f5f5;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #f8f8f8;
+            border-radius: 4px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #666;
+        }
+
+        .actions {
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9375rem;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
+            background: #f8f8f8;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        tr:hover {
+            background: #f8f8f8;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+
+        .error {
+            background: #fee;
+            color: #c00;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📊 Resultados das Avaliações</h1>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number" id="total-count">-</div>
+                <div class="stat-label">Total de Avaliações</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" id="avg-score">-</div>
+                <div class="stat-label">Média Geral</div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button onclick="loadResults()">🔄 Atualizar</button>
+            <button onclick="exportToCSV()">📥 Exportar CSV</button>
+            <button onclick="exportToJSON()">📥 Exportar JSON</button>
+        </div>
+
+        <div id="content">
+            <div class="loading">Carregando resultados...</div>
+        </div>
+    </div>
+
+    <script>
+        let resultsData = [];
+
+        async function loadResults() {
+            const content = document.getElementById('content');
+            content.innerHTML = '<div class="loading">Carregando resultados...</div>';
+
+            try {
+                const response = await fetch('/api/get-results');
+                const data = await response.json();
+
+                if (data.success) {
+                    resultsData = data.results;
+                    displayResults(data.results);
+                    updateStats(data.results);
+                } else {
+                    throw new Error(data.error);
+                }
+            } catch (error) {
+                content.innerHTML = `<div class="error">Erro ao carregar resultados: ${error.message}</div>`;
+            }
+        }
+
+        function displayResults(results) {
+            const content = document.getElementById('content');
+
+            if (results.length === 0) {
+                content.innerHTML = '<div class="loading">Nenhuma avaliação encontrada.</div>';
+                return;
+            }
+
+            const table = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Data/Hora</th>
+                            <th>Questões</th>
+                            <th>Média</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${results.map(result => `
+                            <tr>
+                                <td>${result.id}</td>
+                                <td>${new Date(result.timestamp).toLocaleString('pt-BR')}</td>
+                                <td>${result.totalQuestions}</td>
+                                <td>${result.averageLevel.toFixed(2)}/5</td>
+                                <td>
+                                    <button onclick="viewDetails('${result.id}')">Ver Detalhes</button>
+                                </td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+
+            content.innerHTML = table;
+        }
+
+        function updateStats(results) {
+            document.getElementById('total-count').textContent = results.length;
+
+            if (results.length > 0) {
+                const avgScore = results.reduce((sum, r) => sum + r.averageLevel, 0) / results.length;
+                document.getElementById('avg-score').textContent = avgScore.toFixed(2) + '/5';
+            } else {
+                document.getElementById('avg-score').textContent = '-';
+            }
+        }
+
+        function viewDetails(id) {
+            const result = resultsData.find(r => r.id === id);
+            if (result) {
+                alert(JSON.stringify(result, null, 2));
+            }
+        }
+
+        function exportToCSV() {
+            if (resultsData.length === 0) {
+                alert('Nenhum resultado para exportar');
+                return;
+            }
+
+            const headers = ['ID', 'Data/Hora', 'Total Questões', 'Média'];
+            const rows = resultsData.map(r => [
+                r.id,
+                new Date(r.timestamp).toLocaleString('pt-BR'),
+                r.totalQuestions,
+                r.averageLevel.toFixed(2)
+            ]);
+
+            const csv = [headers, ...rows].map(row => row.join(',')).join('\n');
+            downloadFile(csv, 'resultados.csv', 'text/csv');
+        }
+
+        function exportToJSON() {
+            if (resultsData.length === 0) {
+                alert('Nenhum resultado para exportar');
+                return;
+            }
+
+            const json = JSON.stringify(resultsData, null, 2);
+            downloadFile(json, 'resultados.json', 'application/json');
+        }
+
+        function downloadFile(content, filename, type) {
+            const blob = new Blob([content], { type });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Load results on page load
+        loadResults();
+    </script>
+</body>
+
+</html>
