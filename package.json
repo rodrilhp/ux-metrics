@@ -4,7 +4,7 @@
   "description": "Avaliação de Competências em UX Design - Maria Izabel",
   "scripts": {
     "dev": "node server.js",
-    "start": "node server.js"
+    "build": "echo 'No build step'"
   },
   "keywords": [
     "ux",
