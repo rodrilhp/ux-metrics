@@ -141,37 +141,6 @@ Recupera todas as avaliações (apenas admin).
 }
 ```
 
-## 🌐 Deploy no Vercel
-
-### Preparação
-
-O projeto está configurado para deploy automático no Vercel:
-
-```bash
-# Instale o Vercel CLI
-npm i -g vercel
-
-# Faça login
-vercel login
-
-# Deploy
-vercel --prod
-```
-
-### Configuração Vercel
-
-O arquivo `vercel.json` já está configurado para:
-- Servir arquivos estáticos
-- Executar serverless functions na pasta `/api`
-- Roteamento correto
-
-### Armazenamento em Produção
-
-⚠️ **Importante**: O armazenamento em `/tmp` no Vercel é efêmero. Para produção de longo prazo, considere migrar para:
-- **Vercel KV** (Redis)
-- **Vercel Postgres** (SQL)
-- **Supabase** (PostgreSQL)
-- **MongoDB Atlas**
 
 ## 🔐 Segurança
 
@@ -186,44 +155,6 @@ Em produção, proteja `/admin.html` com autenticação:
 **Opção 2: Variáveis de Ambiente**
 Adicione autenticação básica no `server.js` ou nas serverless functions.
 
-## 📊 Formato dos Dados
-
-### Estrutura de uma Avaliação
-
-```json
-{
-  "id": "assessment_1737302400000_abc123",
-  "timestamp": "2026-01-19T13:00:00.000Z",
-  "userInfo": {},
-  "totalQuestions": 18,
-  "averageLevel": 3.42,
-  "answers": {
-    "1": { "question": "Produto & Negócio", "level": 4 },
-    "2": { "question": "Produto & Negócio", "level": 3 },
-    ...
-  },
-  "completedAt": "2026-01-19T13:05:00.000Z"
-}
-```
-
-## 🎨 Características de Design
-
-- **Tema Claro Minimalista** - Preto e branco com design limpo
-- **Layout Centralizado** - Max-width 1080px
-- **Navegação Rápida** - SPA sem recarregamento de página
-- **Opções Randomizadas** - Níveis embaralhados para avaliação objetiva
-- **Responsivo** - Adaptável a diferentes tamanhos de tela
-
-## 🔄 Fluxo da Aplicação
-
-1. **Usuário** acessa a página inicial
-2. Lê informações sobre a avaliação (18 questões, 5 níveis)
-3. Clica em "Iniciar Avaliação"
-4. Responde às 18 questões (uma por vez)
-5. Ao finalizar, dados são enviados ao backend
-6. Recebe confirmação de envio (sem ver resultados)
-7. **Admin** acessa `/admin.html` para visualizar resultados
-
 ## 📝 Scripts Disponíveis
 
 ```bash
@@ -234,18 +165,8 @@ npm run dev
 npm start
 ```
 
-## 🤝 Contribuindo
-
-Este é um projeto privado desenvolvido especificamente para Maria Izabel. Para modificações:
-
-1. Edite `questions.json` para alterar questões
-2. Modifique `styles.css` para ajustes visuais
-3. Atualize `app.js` para mudanças de comportamento
-
 ## 📄 Licença
 
 MIT
 
 ---
-
-**Desenvolvido para Maria Izabel** | 2026
