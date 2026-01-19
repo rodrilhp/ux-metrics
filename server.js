@@ -7,7 +7,7 @@ const PORT = 8000;
 
 // Middleware
 app.use(express.json());
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Path to results file
 const resultsPath = path.join(__dirname, 'assessment-results.json');
