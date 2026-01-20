@@ -9,7 +9,13 @@ module.exports = async (req, res) => {
 
     try {
         // Path to results file
-        const resultsPath = path.join('/tmp', 'assessment-results.json');
+        // Use /tmp in Vercel Production/Preview (read-only FS)
+        // Use project root in Local Dev (even if using vercel dev)
+        const isVercelProd = process.env.VERCEL === '1' && process.env.VERCEL_ENV !== 'development';
+        const fileName = 'assessment-results.json';
+        const resultsPath = isVercelProd
+            ? path.join('/tmp', fileName)
+            : path.join(process.cwd(), fileName);
 
         // Check if file exists
         if (!fs.existsSync(resultsPath)) {
@@ -25,6 +31,7 @@ module.exports = async (req, res) => {
         const results = JSON.parse(fileContent);
 
         // Return results
+        res.setHeader('Cache-Control', 'no-store, max-age=0');
         return res.status(200).json({
             success: true,
             count: results.length,

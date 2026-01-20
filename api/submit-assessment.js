@@ -32,7 +32,13 @@ module.exports = async (req, res) => {
         };
 
         // Path to results file
-        const resultsPath = path.join('/tmp', 'assessment-results.json');
+        // Use /tmp in Vercel Production/Preview (read-only FS)
+        // Use project root in Local Dev (even if using vercel dev)
+        const isVercelProd = process.env.VERCEL === '1' && process.env.VERCEL_ENV !== 'development';
+        const fileName = 'assessment-results.json';
+        const resultsPath = isVercelProd
+            ? path.join('/tmp', fileName)
+            : path.join(process.cwd(), fileName);
 
         // Read existing results or create new array
         let results = [];
